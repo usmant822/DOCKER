@@ -1,0 +1,23 @@
+<h4><strong>Commands to Install Docker on Linux Machine</strong></h4><p> </p><pre class="prettyprint linenums">Please execute the all commands in sequence as they given.
+
+1. sudo apt-get update
+
+2. sudo apt-get install \
+apt-transport-https \
+ca-certificates \
+curl \
+software-properties-common
+
+3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+4. sudo add-apt-repository \
+"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+stable"
+5. sudo apt-get update
+6. sudo apt-get install docker-ce
+7. docker version</pre><p><br></p><p>Reference : https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1</p><p><strong>Add user to DockerGroup</strong>:</p><p><code>sudo usermod -aG docker &lt;username&gt;</code></p><p><br></p><h4><strong>Commands to Install Docker Machine</strong></h4><pre class="prettyprint linenums">1. base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;&amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &gt;/tmp/docker-machine &amp;&amp;
+2. sudo install /tmp/docker-machine /usr/local/bin/docker-machine
+3. docker-machine version</pre><p><br></p><p>Reference : https://docs.docker.com/machine/install-machine/#install-machine-directly</p><p><br></p><h4><strong>Commands to Install Docker Compose</strong></h4><pre class="prettyprint linenums">1. sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+2. sudo chmod +x /usr/local/bin/docker-compose
+3. docker-compose --version</pre><p>Reference : https://docs.docker.com/compose/install/#install-compose</p>

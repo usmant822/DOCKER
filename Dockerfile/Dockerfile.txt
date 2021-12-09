@@ -1,0 +1,9 @@
+FROM node:17-alpine3.12                    // base image for project
+ADD C:\Users\admin\Desktop\VerifiedExams-frontend           // add directory of project 
+WORKDIR C:\Users\admin\Desktop\VerifiedExams-frontend         // my woking directory where the code is
+RUN yarn add next                 //install dependecies
+RUN npm install                   // install dependcies
+EXPOSE 3000
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=3000
+CMD [ "yarn", "dev" ]          //for start    
